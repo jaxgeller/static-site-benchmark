@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ..
+
 # Install Dependencies
 sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install git curl build-essential g++ flex bison gperf ruby perl libsqlite3-dev libfontconfig1-dev libicu-dev libfreetype6 libssl-dev \
   libpng-dev libjpeg-dev python libx11-dev libxext-dev -y
@@ -17,4 +19,5 @@ cd phantomjs  && /
 git checkout 2.0  && /
 ./build.sh
 
-git clone https://github.com/jaxgeller/static-site-benchmark
+cd static-site-benchmark
+pm2 start start.js http://youwebsitehere.com

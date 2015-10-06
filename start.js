@@ -1,4 +1,5 @@
 'use strict';
+
 var fs = require('fs');
 
 var url = process.argv[2];
@@ -10,7 +11,7 @@ var spawn = require('child_process').spawn;
 var proc = spawn("phantomjs", ["phantom.js", url]);
 
 var counter = 0;
-var data = fs.createWriteStream('s3.csv', {'flags': 'a'});
+var data = fs.createWriteStream(url+'.csv', {'flags': 'a'});
 
 data.write('Iteration, Response\n');
 
