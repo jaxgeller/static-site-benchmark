@@ -3,14 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "benchmark.js",
-  "scripts": {
-    "start": "node run.js; exit 0;"
-  },
-  "author": "",
+  "author": "jaxgeller",
   "license": "MIT",
   "dependencies": {
-    "async": "^1.4.2",
-    "phantomjs": "^1.9.18",
-    "plotly": "^1.0.2"
   }
 }

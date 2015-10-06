@@ -4,6 +4,8 @@ var webpage = require('webpage');
 (function run() {
   var date;
   var page = webpage.create();
+  page.clearMemoryCache();
+
   var url = system.args[1]+'?cachemiss='+(Math.random()*1000);
 
   page.onLoadStarted = function() { date = new Date(); }
@@ -13,7 +15,7 @@ var webpage = require('webpage');
       system.stdout.write(new Date() - date);
       page.close();
     } else {
-      system.stdout.write('ERROR MISS');
+      system.stdout.write('ERROR');
     }
     run();
   });

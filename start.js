@@ -1,21 +1,16 @@
-const user = process.env.PLOTLY_USER;
-const key = process.env.PLOTLY_KEY;
-const plotly = require('plotly')(user, key);
+'use strict';
+var fs = require('fs');
 
-var path = require('path')
-var childProcess = require('child_process')
-var phantomjs = require('phantomjs')
-var binPath = phantomjs.path
+var url = process.argv[2];
+if (!url) process.exit(1);
 
-var childArgs = [ path.join(__dirname, 'phantom.js'), 'http://static-site-benchmark.s3-website-us-east-1.amazonaws.com/' ];
+console.log('starting bench on ' + url);
 
 var spawn = require('child_process').spawn;
-var proc = spawn(binPath, childArgs);
+var proc = spawn("phantomjs", ["phantom.js", url]);
 
 var counter = 0;
-
-var fs = require('fs');
-var data = fs.createWriteStream('s3.csv');
+var data = fs.createWriteStream('s3.csv', {'flags': 'a'});
 
 data.write('Iteration, Response\n');
 
