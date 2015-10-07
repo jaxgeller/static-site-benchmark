@@ -12,7 +12,7 @@ var webpage = require('webpage');
 
   page.open(url, function(s) {
     if (s === 'success') {
-      system.stdout.write(new Date() - date);
+      console.log(new Date() - date);
       page.close();
     } else {
       system.stdout.write('ERROR');

@@ -11,7 +11,7 @@ var spawn = require('child_process').spawn;
 var proc = spawn("phantomjs", ["phantom.js", url]);
 
 var counter = 0;
-var data = fs.createWriteStream(url+'.csv', {'flags': 'a'});
+var data = fs.createWriteStream(url.split('://')[1]+'.csv', {'flags': 'a'});
 
 data.write('Iteration, Response\n');
 
