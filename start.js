@@ -16,6 +16,6 @@ var data = fs.createWriteStream(url.split('://')[1]+'.csv', {'flags': 'a'});
 data.write('Iteration, Response\n');
 
 proc.stdout.on('data', function(d) {
-  data.write(counter + ', ' + d.toString() + '\n');
+  data.write(counter + ', ' + d.toString());
   counter += 1;
 });
