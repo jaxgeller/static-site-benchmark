@@ -1,0 +1,10 @@
+{
+  "name": "static-site-benchmark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "benchmark.js",
+  "author": "jaxgeller",
+  "license": "MIT",
+  "dependencies": {
+  }
+}
