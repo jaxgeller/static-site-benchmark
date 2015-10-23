@@ -1,5 +1,7 @@
 FROM rosenhouse/phantomjs2:latest
 
+MAINTAINER jaxgeller
+
 RUN \
   apt-get update && apt-get upgrade -y && \
   apt-get install -y curl git nodejs
